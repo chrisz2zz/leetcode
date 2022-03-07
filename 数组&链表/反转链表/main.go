@@ -68,13 +68,13 @@ import "fmt"
 
 func main() {
 	h := &ListNode{
-		Val:  1,
+		Val: 1,
 		Next: &ListNode{
-			Val:  2,
+			Val: 2,
 			Next: &ListNode{
-				Val:  3,
+				Val: 3,
 				Next: &ListNode{
-					Val:  4,
+					Val: 4,
 					Next: &ListNode{
 						Val:  5,
 						Next: nil,
@@ -113,7 +113,7 @@ func reverseList2(head *ListNode) *ListNode {
 再将第二个游标.next指向第一个游标
 再将第一个游标向后移,第二游标向后移
 直到第二个游标为nil,此时第一个游标为原链表最后一个节点
- */
+*/
 //func reverseList(head *ListNode) *ListNode {
 //	var cur, prev *ListNode = head, nil
 //	for cur != nil {
@@ -149,7 +149,7 @@ func reverseList3(head *ListNode) *ListNode {
 	直到head.Next为nil 或 head为nil
 
 	最后返回prev.Next
- */
+*/
 func reverseList(head *ListNode) *ListNode {
 	prev := ListNode{}
 

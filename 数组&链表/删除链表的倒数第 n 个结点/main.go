@@ -4,13 +4,13 @@ import "fmt"
 
 func main() {
 	head := &ListNode{
-		Val:  1,
+		Val: 1,
 		Next: &ListNode{
-			Val:  2,
+			Val: 2,
 			Next: &ListNode{
-				Val:  3,
+				Val: 3,
 				Next: &ListNode{
-					Val:  4,
+					Val: 4,
 					Next: &ListNode{
 						Val:  5,
 						Next: nil,
@@ -52,7 +52,7 @@ func removeNthFromEnd2(head *ListNode, n int) *ListNode {
 
 	node := list[index]
 
-	prev := list[index - 1]
+	prev := list[index-1]
 
 	prev.Next = node.Next
 

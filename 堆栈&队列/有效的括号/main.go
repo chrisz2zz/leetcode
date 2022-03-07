@@ -10,7 +10,7 @@ func main() {
 
 func isValid(s string) bool {
 	stack := make(stack, 0)
-	dict := map[rune]rune{')':'(',']':'[','}':'{'}
+	dict := map[rune]rune{')': '(', ']': '[', '}': '{'}
 
 	for _, i := range s {
 		if v, ok := dict[i]; ok {

@@ -12,13 +12,13 @@ import (
 
 func main() {
 	head := &ListNode{
-		Val:  1,
+		Val: 1,
 		Next: &ListNode{
-			Val:  2,
+			Val: 2,
 			Next: &ListNode{
-				Val:  3,
+				Val: 3,
 				Next: &ListNode{
-					Val:  4,
+					Val: 4,
 					Next: &ListNode{
 						Val:  5,
 						Next: nil,
@@ -53,7 +53,7 @@ type ListNode struct {
 
 /*
 分组翻转, 不断形成分组翻转小链表, 并移动分组虚拟头用以连接
- */
+*/
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	//虚拟头 也用作返回
 	h := &ListNode{Next: head}
@@ -106,7 +106,7 @@ func reserve(head, tail *ListNode) (*ListNode, *ListNode) {
 
 /*
 栈
- */
+*/
 func reverseKGroup2(head *ListNode, k int) *ListNode {
 	//数组作为栈
 	stack := make([]*ListNode, 0)
@@ -141,13 +141,13 @@ func reverseKGroup2(head *ListNode, k int) *ListNode {
 	}
 }
 
-func push(node *ListNode, list *[]*ListNode)  {
+func push(node *ListNode, list *[]*ListNode) {
 	*list = append(*list, node)
 }
 
 func pop(list *[]*ListNode) *ListNode {
-	node := (*list)[len(*list) - 1]
-	*list = (*list)[:len(*list) - 1]
+	node := (*list)[len(*list)-1]
+	*list = (*list)[:len(*list)-1]
 	return node
 }
 

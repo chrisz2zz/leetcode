@@ -47,11 +47,11 @@ import "fmt"
 
 func main() {
 	h := &ListNode{
-		Val:  1,
+		Val: 1,
 		Next: &ListNode{
-			Val:  2,
+			Val: 2,
 			Next: &ListNode{
-				Val:  3,
+				Val: 3,
 				Next: &ListNode{
 					Val:  4,
 					Next: nil,
@@ -97,7 +97,7 @@ func swapPairs2(head *ListNode) *ListNode {
 第二个节点指向第一个节点
 然后将虚拟头移动到翻转后的第二个节点
 以此类推
- */
+*/
 func swapPairs(head *ListNode) *ListNode {
 	h := &ListNode{Next: head}
 	t := h

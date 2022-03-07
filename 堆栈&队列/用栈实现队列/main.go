@@ -21,7 +21,7 @@ empty操作:
 	直接判断input是否为空
 
 	优化点:判断input和output是否都为空
- */
+*/
 
 func main() {
 	queue := Constructor()
@@ -86,7 +86,7 @@ func (this *MyQueue) Peek() int {
 		this.output.push(this.input.pop())
 	}
 
-	elem := this.output[len(this.output) - 1]
+	elem := this.output[len(this.output)-1]
 
 	for len(this.output) != 0 {
 		this.input.push(this.output.pop())

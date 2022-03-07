@@ -4,11 +4,11 @@ import "fmt"
 
 func main() {
 	head := &ListNode{
-		Val:  4,
+		Val: 4,
 		Next: &ListNode{
-			Val:  2,
+			Val: 2,
 			Next: &ListNode{
-				Val:  1,
+				Val: 1,
 				Next: &ListNode{
 					Val:  3,
 					Next: nil,
@@ -49,9 +49,9 @@ func sortList(head *ListNode) *ListNode {
 	return prev.Next
 }
 
-func sort(list []*ListNode)  {
+func sort(list []*ListNode) {
 	for i := 0; i < len(list); i++ {
-		for j := i+1; j < len(list); j++ {
+		for j := i + 1; j < len(list); j++ {
 			if list[j].Val < list[i].Val {
 				list[j], list[i] = list[i], list[j]
 			}

@@ -10,13 +10,13 @@ import "fmt"
 
 func main() {
 	head := &ListNode{
-		Val:  1,
+		Val: 1,
 		Next: &ListNode{
-			Val:  2,
+			Val: 2,
 			Next: &ListNode{
-				Val:  3,
+				Val: 3,
 				Next: &ListNode{
-					Val:  4,
+					Val: 4,
 					Next: &ListNode{
 						Val:  5,
 						Next: nil,
@@ -41,7 +41,7 @@ type ListNode struct {
 
 /*
 数组方法
- */
+*/
 func reorderList2(head *ListNode) {
 	list := make([]*ListNode, 0)
 	t := head
@@ -53,7 +53,7 @@ func reorderList2(head *ListNode) {
 	length := len(list)
 
 	t = head
-	for i := length - 1; i > length / 2; i-- {
+	for i := length - 1; i > length/2; i-- {
 		if t == list[i] {
 			return
 		}
@@ -69,8 +69,8 @@ func reorderList2(head *ListNode) {
 
 /*
 寻找中点  链表翻转  合并链表
- */
-func reorderList(head *ListNode)  {
+*/
+func reorderList(head *ListNode) {
 	if head == nil {
 		return
 	}

@@ -10,11 +10,11 @@ import "fmt"
 
 func main() {
 	t := &ListNode{
-		Val:  1,
+		Val: 1,
 		Next: &ListNode{
-			Val:  2,
+			Val: 2,
 			Next: &ListNode{
-				Val:  3,
+				Val: 3,
 				Next: &ListNode{
 					Val:  4,
 					Next: nil,
@@ -32,15 +32,15 @@ func main() {
 	l1 := &ListNode{
 		Val: 9,
 		Next: &ListNode{
-			Val:  9,
+			Val: 9,
 			Next: &ListNode{
-				Val:  9,
+				Val: 9,
 				Next: &ListNode{
-					Val:  9,
+					Val: 9,
 					Next: &ListNode{
-						Val:  9,
+						Val: 9,
 						Next: &ListNode{
-							Val:  9,
+							Val: 9,
 							Next: &ListNode{
 								Val:  9,
 								Next: nil,
@@ -55,7 +55,7 @@ func main() {
 	l2 := &ListNode{
 		Val: 9,
 		Next: &ListNode{
-			Val:  9,
+			Val: 9,
 			Next: &ListNode{
 				Val:  9,
 				Next: nil,
@@ -71,8 +71,8 @@ func main() {
 }
 
 type ListNode struct {
-    Val int
-    Next *ListNode
+	Val  int
+	Next *ListNode
 }
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
@@ -90,8 +90,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 			l2 = l2.Next
 		}
 
-
-		sum := a+b+carry
+		sum := a + b + carry
 		sum, carry = sum%10, sum/10
 		if rs == nil {
 			rs = &ListNode{Val: sum}

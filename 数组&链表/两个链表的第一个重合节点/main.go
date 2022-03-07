@@ -10,12 +10,12 @@ import "fmt"
 
 func main() {
 	//a1 := &ListNode{Val:  4, Next: nil}
-	a2 := &ListNode{Val:  1, Next: nil}
+	a2 := &ListNode{Val: 1, Next: nil}
 	//a1.Next = a2
 
-	b1 := &ListNode{Val:  5, Next: nil}
-	b2 := &ListNode{Val:  0, Next: nil}
-	b3 := &ListNode{Val:  1, Next: nil}
+	b1 := &ListNode{Val: 5, Next: nil}
+	b2 := &ListNode{Val: 0, Next: nil}
+	b3 := &ListNode{Val: 1, Next: nil}
 	b1.Next = b2
 	b2.Next = b3
 
@@ -37,7 +37,7 @@ type ListNode struct {
 找到长的那一条,开始移动,直到剩余长度与短的那条相等时,移动短的
 若相等,则为相交点
 不相等,不相交
- */
+*/
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	a, b := headA, headB
 	distanceA, distanceB := 0, 0

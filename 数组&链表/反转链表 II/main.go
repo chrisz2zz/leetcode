@@ -4,13 +4,13 @@ import "fmt"
 
 func main() {
 	h := &ListNode{
-		Val:  1,
+		Val: 1,
 		Next: &ListNode{
-			Val:  2,
+			Val: 2,
 			Next: &ListNode{
-				Val:  3,
+				Val: 3,
 				Next: &ListNode{
-					Val:  4,
+					Val: 4,
 					Next: &ListNode{
 						Val:  5,
 						Next: nil,
@@ -38,7 +38,7 @@ type ListNode struct {
 定位到要反转的节点和要反转的第一个节点前驱节点(pre)
 不断的将第一个节点往后挪
 然后把后面的节点放到pre节点的后面
- */
+*/
 func reverseBetween(head *ListNode, left int, right int) *ListNode {
 	var pre *ListNode
 	h := &ListNode{Next: head}

@@ -35,7 +35,7 @@ type ListNode struct {
 
 /*
 map记录法
- */
+*/
 func detectCycle2(head *ListNode) *ListNode {
 	index := make(map[*ListNode]bool)
 	for head != nil {
@@ -50,7 +50,7 @@ func detectCycle2(head *ListNode) *ListNode {
 
 /*
 快慢指针
- */
+*/
 func detectCycle(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return nil

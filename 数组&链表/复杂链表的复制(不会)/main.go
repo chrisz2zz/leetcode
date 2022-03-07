@@ -8,7 +8,7 @@ func main() {
 		Next:   nil,
 		Random: nil,
 	}
-	
+
 	h2 := &Node{
 		Val:    13,
 		Next:   nil,
@@ -32,7 +32,7 @@ func main() {
 		Next:   nil,
 		Random: nil,
 	}
-	
+
 	h1.Next = h2
 	h2.Next = h3
 	h3.Next = h4
@@ -41,7 +41,7 @@ func main() {
 	h3.Random = h5
 	h4.Random = h3
 	h5.Random = h1
-	
+
 	c := copyRandomList(h1)
 
 	for c != nil {
@@ -73,17 +73,17 @@ func copyRandomList(head *Node) *Node {
 			t = t.Next
 			index[counter] = hair
 		}
-		
+
 		counter++
 	}
-	
+
 	p = head
 	t = hair
 	for p != nil {
 		if p.Random != nil {
-			
+
 		}
 	}
-	
+
 	return hair
 }

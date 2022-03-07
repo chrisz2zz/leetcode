@@ -10,7 +10,7 @@ import "fmt"
 
 /*
 todo 节点操作可以抽象为方法
- */
+*/
 func main() {
 	obj := Constructor(2)
 	//fmt.Println(obj.Get(2))
@@ -103,7 +103,7 @@ func (this *LRUCache) Put(key int, value int) {
 	}
 
 	// 容量满的时候  移除尾部元素
-	if this.used >= this.capacity  {
+	if this.used >= this.capacity {
 		//取出要淘汰的元素
 		elim := this.tail.prev
 		//淘汰元素的前驱(prev)
@@ -121,7 +121,7 @@ func (this *LRUCache) Put(key int, value int) {
 	this.used++
 
 	e := &elem{
-		key: key,
+		key:   key,
 		value: value,
 		prev:  nil,
 		next:  nil,

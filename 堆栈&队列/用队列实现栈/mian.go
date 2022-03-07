@@ -18,7 +18,7 @@ func main() {
 }
 
 type MyStack struct {
-	input array
+	input  array
 	output array
 }
 
@@ -29,10 +29,9 @@ func Constructor() MyStack {
 	}
 }
 
-func (this *MyStack) Push(x int)  {
+func (this *MyStack) Push(x int) {
 	this.input.push(x)
 }
-
 
 func (this *MyStack) Pop() int {
 	for len(this.input) != 1 {
@@ -47,7 +46,6 @@ func (this *MyStack) Pop() int {
 
 	return elem
 }
-
 
 func (this *MyStack) Top() int {
 	for len(this.input) != 1 {
@@ -64,7 +62,6 @@ func (this *MyStack) Top() int {
 
 	return elem
 }
-
 
 func (this *MyStack) Empty() bool {
 	return len(this.input) == 0

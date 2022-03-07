@@ -4,9 +4,9 @@ import "fmt"
 
 func main() {
 	l1 := &ListNode{
-		Val:  1,
+		Val: 1,
 		Next: &ListNode{
-			Val:  4,
+			Val: 4,
 			Next: &ListNode{
 				Val:  5,
 				Next: nil,
@@ -15,9 +15,9 @@ func main() {
 	}
 
 	l2 := &ListNode{
-		Val:  1,
+		Val: 1,
 		Next: &ListNode{
-			Val:  3,
+			Val: 3,
 			Next: &ListNode{
 				Val:  4,
 				Next: nil,
@@ -26,7 +26,7 @@ func main() {
 	}
 
 	l3 := &ListNode{
-		Val:  2,
+		Val: 2,
 		Next: &ListNode{
 			Val:  6,
 			Next: nil,
@@ -47,9 +47,9 @@ func main() {
 }
 
 type ListNode struct {
-     Val int
-     Next *ListNode
- }
+	Val  int
+	Next *ListNode
+}
 
 func mergeKLists(lists []*ListNode) *ListNode {
 	if len(lists) == 0 {
@@ -61,7 +61,7 @@ func mergeKLists(lists []*ListNode) *ListNode {
 
 	basic := &ListNode{Next: lists[0]}
 
-	for i := 1; i <len(lists); i++ {
+	for i := 1; i < len(lists); i++ {
 		head := lists[i]
 		h := basic.Next
 		for head != nil {

@@ -42,7 +42,7 @@ type ListNode struct {
 若相遇得有环
 若slow或者fast或者fast.next为nil
 说明无环
- */
+*/
 func hasCycle2(head *ListNode) bool {
 	slow, fast := head, head
 	for slow != nil && fast != nil && fast.Next != nil {
@@ -59,7 +59,7 @@ func hasCycle2(head *ListNode) bool {
 记录法
 循环遍历,把每个节点地址都记录下来保存到map中
 只要遇到map中存在即有环
- */
+*/
 func hasCycle(head *ListNode) bool {
 	index := make(map[*ListNode]bool)
 	for head != nil {
