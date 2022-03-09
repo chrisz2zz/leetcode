@@ -57,33 +57,17 @@ type Node struct {
 }
 
 func copyRandomList(head *Node) *Node {
-	var hair *Node
-	t := &Node{}
-	counter := 0
-	index := make(map[int]*Node)
+	if head == nil {
+		return nil
+	}
+
+	hair := &Node{}
 
 	p := head
+	//t := hair
 	for p != nil {
-		if hair == nil {
-			hair = &Node{Val: p.Val}
-			t = hair
-			index[counter] = t
-		} else {
-			t.Next = &Node{Val: p.Val}
-			t = t.Next
-			index[counter] = hair
-		}
 
-		counter++
 	}
 
-	p = head
-	t = hair
-	for p != nil {
-		if p.Random != nil {
-
-		}
-	}
-
-	return hair
+	return hair.Next
 }
