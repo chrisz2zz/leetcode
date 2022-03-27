@@ -150,10 +150,66 @@ func reverseList3(head *ListNode) *ListNode {
 
 	最后返回prev.Next
 */
-func reverseList(head *ListNode) *ListNode {
+func reverseList4(head *ListNode) *ListNode {
 	prev := ListNode{}
 
 	prev.Next = head
+
+	for head != nil && head.Next != nil {
+		tmp := head.Next
+		head.Next = tmp.Next
+		tmp.Next = prev.Next
+		prev.Next = tmp
+	}
+
+	return prev.Next
+}
+
+//游标
+func reverseList5(head *ListNode) *ListNode {
+	//特殊处理
+	if head == nil || head.Next == nil {
+		return head
+	}
+
+	var prev, cur *ListNode
+	cur = head
+	for cur != nil {
+		cur, cur.Next, prev = cur.Next, prev, cur
+	}
+
+	return prev
+}
+
+//递归
+func reverseList6(head *ListNode) *ListNode {
+	//特殊处理
+	if head == nil || head.Next == nil {
+		return head
+	}
+
+	tail, h := reserve(head)
+	tail.Next = nil
+	return h
+}
+
+func reserve(n *ListNode) (*ListNode, *ListNode) {
+	if n.Next == nil {
+		return n, n
+	}
+
+	cur := n
+	next, h := reserve(n.Next)
+	next.Next = cur
+
+	return cur, h
+}
+
+func reverseList(head *ListNode) *ListNode {
+	//特殊处理
+	prev := ListNode{
+		Next: head,
+	}
 
 	for head != nil && head.Next != nil {
 		tmp := head.Next

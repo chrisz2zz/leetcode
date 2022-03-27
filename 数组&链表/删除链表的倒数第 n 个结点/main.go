@@ -20,7 +20,7 @@ func main() {
 		},
 	}
 
-	r := removeNthFromEnd(head, 5)
+	r := removeNthFromEnd(head, 2)
 
 	for r != nil {
 		fmt.Println(r.Val)
@@ -62,7 +62,7 @@ func removeNthFromEnd2(head *ListNode, n int) *ListNode {
 }
 
 //快慢指针
-func removeNthFromEnd(head *ListNode, n int) *ListNode {
+func removeNthFromEnd3(head *ListNode, n int) *ListNode {
 	hair := &ListNode{Next: head}
 	slow, fast, prev := hair, hair, hair
 
@@ -80,4 +80,24 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	prev.Next = fast.Next
 	fast = nil
 	return hair.Next
+}
+
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	prev := &ListNode{Next: head}
+	fast, slow := prev, prev
+
+	var tmp *ListNode
+	counter := 0
+	for fast.Next != nil {
+		fast = fast.Next
+		counter++
+		if counter >= n {
+			tmp = slow
+			slow = slow.Next
+		}
+	}
+
+	tmp.Next = slow.Next
+
+	return prev.Next
 }

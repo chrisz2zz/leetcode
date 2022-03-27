@@ -60,7 +60,7 @@ func hasCycle2(head *ListNode) bool {
 循环遍历,把每个节点地址都记录下来保存到map中
 只要遇到map中存在即有环
 */
-func hasCycle(head *ListNode) bool {
+func hasCycle3(head *ListNode) bool {
 	index := make(map[*ListNode]bool)
 	for head != nil {
 		if index[head] {
@@ -69,5 +69,44 @@ func hasCycle(head *ListNode) bool {
 		index[head] = true
 		head = head.Next
 	}
+	return false
+}
+
+
+func hasCycle4(head *ListNode) bool {
+	//特殊处理
+	if head == nil || head.Next == nil {
+		return false
+	}
+
+	index := make(map[*ListNode]bool)
+	for head.Next != nil {
+		if index[head] {
+			return true
+		}
+
+		index[head] = true
+		head = head.Next
+	}
+
+	return false
+}
+
+func hasCycle(head *ListNode) bool {
+	//特殊处理
+	if head == nil || head.Next == nil {
+		return false
+	}
+
+	slow, fast := head, head
+
+	for slow != nil && fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+		if slow == fast {
+			return true
+		}
+	}
+
 	return false
 }
