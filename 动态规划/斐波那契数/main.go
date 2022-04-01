@@ -8,6 +8,7 @@ package main
 
 import "fmt"
 
+//https://labuladong.github.io/algo/1/4/
 func main() {
 	fmt.Println(fib(4))
 }
