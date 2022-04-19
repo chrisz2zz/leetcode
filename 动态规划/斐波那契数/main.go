@@ -60,7 +60,7 @@ func fib4(n int) int {
 }
 
 //状态转移,缩减空间复杂度
-func fib(n int) int {
+func fib5(n int) int {
 	if n == 0 || n == 1 {
 		return n
 	}
@@ -72,4 +72,20 @@ func fib(n int) int {
 	}
 
 	return i_1
+}
+
+func fib(n int) int {
+	a, b := 0, 1
+
+	if n == 0 {
+		return a
+	}
+
+	if n == 1 {
+		return b
+	}
+	for i := 0; i <= n-2; i++ {
+		b, a = a+b, b
+	}
+	return b
 }

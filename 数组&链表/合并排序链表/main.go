@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	l1 := &ListNode{
@@ -52,37 +55,24 @@ type ListNode struct {
 }
 
 func mergeKLists(lists []*ListNode) *ListNode {
-	if len(lists) == 0 {
-		return nil
-	}
-	if len(lists) == 1 {
-		return lists[0]
-	}
-
-	basic := &ListNode{Next: lists[0]}
-
-	for i := 1; i < len(lists); i++ {
-		head := lists[i]
-		h := basic.Next
-		for head != nil {
-			p := head
-			for h != nil || h.Next != nil {
-				tmpP := h
-				tmp := h.Next
-				if p.Val >= h.Val && p.Val <= h.Val {
-					tmpP.Next = p
-					p.Next = tmp
-					h = h.Next
-					continue
-				}
-
-				if tmp.Next == nil {
-					tmp.Next = p
-					p.Next = nil
-				}
-			}
-			head = head.Next
+	vals := make([]int, 0)
+	for i := 0; i < len(lists); i++ {
+		for lists[i] != nil  {
+			vals = append(vals, lists[i].Val)
+			lists[i] = lists[i].Next
 		}
 	}
-	return basic.Next
+
+	sort.Ints(vals)
+
+	head := &ListNode{}
+
+	tmp := head
+
+	for i := 0; i < len(vals); i++ {
+		tmp.Next = &ListNode{Val: vals[i]}
+		tmp = tmp.Next
+	}
+
+	return head.Next
 }
